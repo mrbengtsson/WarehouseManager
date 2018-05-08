@@ -1,9 +1,9 @@
 #include "Goods.h"
 
-Goods::Goods(std::string name, float weight)
+Goods::Goods(std::string name)
 {
-	this->name = name;
-	this->weight = weight;
+    this->name = name;
+    this->weight = 0;
 	this->expirationDate = "None";
 	this->destination = "None";
 }

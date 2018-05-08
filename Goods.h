@@ -11,7 +11,7 @@ private:
 	std::string expirationDate;
 	std::string destination;
 public:
-	Goods(std::string name, float weight = 0);
+    Goods(std::string name);
 	virtual ~Goods();
 
 	std::string getName() const;
