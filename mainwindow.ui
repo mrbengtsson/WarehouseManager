@@ -43,7 +43,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Main_page">
      <widget class="QPushButton" name="buttonNewWarehouse">
@@ -432,7 +432,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButtonRemoveGoods">
+     <widget class="QPushButton" name="pushButtonWarehouseRemoveGoods">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -445,7 +445,7 @@
        <string>Remove</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButtonSelectGoods">
+     <widget class="QPushButton" name="pushButtonWarehouseSelectGoods">
       <property name="geometry">
        <rect>
         <x>780</x>
@@ -458,7 +458,7 @@
        <string>Select</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButtonNewGoods">
+     <widget class="QPushButton" name="pushButtonWarehouseNewGoods">
       <property name="geometry">
        <rect>
         <x>670</x>
@@ -596,7 +596,7 @@
        <string>Remove</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="lineEditTruckDestination">
       <property name="geometry">
        <rect>
         <x>640</x>
@@ -682,9 +682,9 @@
      <widget class="QPushButton" name="pushButtonBackToWarehouse_2">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>480</x>
         <y>430</y>
-        <width>71</width>
+        <width>81</width>
         <height>41</height>
        </rect>
       </property>
@@ -692,13 +692,13 @@
        <string>Back</string>
       </property>
      </widget>
-     <widget class="QLabel" name="labelTruckName_2">
+     <widget class="QLabel" name="labelGoodsName">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>40</x>
         <y>170</y>
         <width>851</width>
         <height>40</height>
@@ -721,7 +721,7 @@
      <widget class="QLineEdit" name="lineEditGoodsDestination">
       <property name="geometry">
        <rect>
-        <x>430</x>
+        <x>420</x>
         <y>240</y>
         <width>201</width>
         <height>41</height>
@@ -731,7 +731,7 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>300</x>
         <y>240</y>
         <width>91</width>
         <height>41</height>
@@ -747,7 +747,7 @@
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>300</x>
         <y>300</y>
         <width>121</width>
         <height>41</height>
@@ -763,7 +763,7 @@
      <widget class="QDoubleSpinBox" name="doubleSpinBoxGoodsWeight">
       <property name="geometry">
        <rect>
-        <x>431</x>
+        <x>421</x>
         <y>360</y>
         <width>201</width>
         <height>41</height>
@@ -785,7 +785,7 @@
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>300</x>
         <y>360</y>
         <width>91</width>
         <height>41</height>
@@ -798,14 +798,428 @@
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QDateEdit" name="dateEdit">
+     <widget class="QDateEdit" name="dateEditGoodsDate">
       <property name="geometry">
        <rect>
-        <x>429</x>
+        <x>419</x>
         <y>300</y>
         <width>201</width>
         <height>41</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonSaveGoods">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>430</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QDoubleSpinBox" name="doubleSpinBoxNewGoodsWeight">
+      <property name="geometry">
+       <rect>
+        <x>431</x>
+        <y>390</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::UpDownArrows</enum>
+      </property>
+      <property name="suffix">
+       <string> kg</string>
+      </property>
+      <property name="decimals">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <double>1000.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>270</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Destination:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonBackToWarehouse_3">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>460</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="dateEditNewGoodsDate">
+      <property name="geometry">
+       <rect>
+        <x>429</x>
+        <y>330</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelTruckName_3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>150</y>
+        <width>851</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Add New Goods</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditNewGoodsDestination">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>270</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>390</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Weight:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>330</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Expiration Date:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>210</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditNewGoodsName">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>210</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAddGoodsToWarehouseOrTruck">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>460</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QLineEdit" name="lineEditNewTruckName">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>250</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAddTruck">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>380</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>250</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>310</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Destination:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditNewTruckDestination">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>310</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonBackToWarehouse_4">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>380</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelTruckName_4">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>190</y>
+        <width>851</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Add New Truck</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QListWidget" name="listWidgetMoveTruckGoods">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>129</y>
+        <width>300</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>36</x>
+        <y>103</y>
+        <width>301</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Truck Goods:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>100</y>
+        <width>301</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Warehouse Goods:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelWarehouseName_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>50</y>
+        <width>851</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Move Goods</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listWidgetMoveWarehouseGoods">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>129</y>
+        <width>300</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonBackToTruck">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>390</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonMoveToTruck">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>270</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;-</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonMoveToWarehouse">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>330</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-&gt;</string>
       </property>
      </widget>
     </widget>
