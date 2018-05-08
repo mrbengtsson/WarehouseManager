@@ -27,10 +27,21 @@ private slots:
 
     void on_buttonRemoveWarehouse_clicked();
 
+    void on_pushButtonBackToWarehouse_4_clicked();
+
+    void on_pushButtonAddTruck_clicked();
+
+    void on_pushButtonAddGoodsToWarehouseOrTruck_clicked();
+
+    void on_pushButtonBackToWarehouse_3_clicked();
+
+
 private:
     Ui::MainWindow *ui;
     System* system;
+    int lastPage;
 
+    void setCurrentPage(int index);
     void loadWarehouseNames();
 };
 
