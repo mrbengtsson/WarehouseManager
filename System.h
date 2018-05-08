@@ -10,7 +10,10 @@ private:
 	DatabaseHandler* databaseHandler;
 	WarehouseHandler* warehouseHandler;
 
+	bool currentSelectionIsATruck;
 	Warehouse* selectedWarehouse;
+	Truck* selectedTruck;
+	Goods* selectedGoods;
 public:
 	System(int databaseCapacity = 1, int warehouseCapacity = 10);
 	virtual ~System();
@@ -18,11 +21,17 @@ public:
 	void selectWarehouse(std::string name);
 	void addWarehouse(Warehouse* warehouse);
 	void removeWarehouse(std::string name);
-	
+	bool warehouseExists(std::string name) const;
+
+	void selectTruck(std::string name);
+	void selectGoods(std::string name);
+
 	Warehouse* getSelectedWarehouse() const;
+	Truck* getSelectedTruck() const;
+	Goods* getSelectedGoods() const;
+
     bool isDatabaseHandlerFull() const;
     bool isWarehouseHandlerFull() const;
-    bool warehouseExists(std::string name) const;
 };
 
 #endif // !SYSTEM_H

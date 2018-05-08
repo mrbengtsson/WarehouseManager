@@ -24,6 +24,7 @@ public:
 	//From goodsHandler
 	void addGoods(Goods* goods) throw(...);
 	Goods* getGoods(std::string name);
+	Goods* removeGoods(std::string name);
 	int getNrOfGoods() const;
 	bool isFull() const;
 };

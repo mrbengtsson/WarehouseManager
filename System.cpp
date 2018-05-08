@@ -5,6 +5,9 @@ System::System(int databaseCapacity, int warehouseCapacity)
 	this->databaseHandler = new DatabaseHandler(databaseCapacity);
 	this->warehouseHandler = new WarehouseHandler(warehouseCapacity);
 	this->selectedWarehouse = nullptr;
+	this->selectedTruck = nullptr;
+	this->selectedGoods = nullptr;
+	this->currentSelectionIsATruck = false;
 }
 
 System::~System()
@@ -35,17 +38,44 @@ Warehouse * System::getSelectedWarehouse() const
     return this->selectedWarehouse;
 }
 
-bool System::isDatabaseHandlerFull() const
+Truck * System::getSelectedTruck() const
 {
-    return this->databaseHandler->isFull();
+	return this->selectedTruck;
 }
 
-bool System::isWarehouseHandlerFull() const
+Goods * System::getSelectedGoods() const
 {
-    return this->warehouseHandler->isFull();
+	return this->selectedGoods;
 }
 
 bool System::warehouseExists(std::string name) const
 {
-    return this->warehouseHandler->getWarehouse(name) != nullptr;
+	return this->warehouseHandler->getWarehouse(name) != nullptr;
+}
+
+void System::selectTruck(std::string name)
+{
+	this->selectedTruck = this->selectedWarehouse->getTruck(name);
+}
+
+void System::selectGoods(std::string name)
+{
+	if (this->currentSelectionIsATruck)
+	{
+		this->selectedGoods = this->selectedTruck->getGoods(name);
+	}
+	else
+	{
+		this->selectedGoods = this->selectedWarehouse->getGoods(name);
+	}
+}
+
+bool System::isDatabaseHandlerFull() const
+{
+	return this->databaseHandler->isFull();
+}
+
+bool System::isWarehouseHandlerFull() const
+{
+	return this->warehouseHandler->isFull();
 }

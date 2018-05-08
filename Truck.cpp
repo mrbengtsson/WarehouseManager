@@ -42,6 +42,11 @@ Goods * Truck::getGoods(std::string name)
 	return this->goodsHandler->getGoods(name);
 }
 
+Goods * Truck::removeGoods(std::string name)
+{
+	return this->goodsHandler->removeGoods(name);
+}
+
 int Truck::getNrOfGoods() const
 {
 	return this->goodsHandler->getNrOfGoods();
