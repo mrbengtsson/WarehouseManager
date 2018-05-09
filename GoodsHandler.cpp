@@ -19,7 +19,24 @@ GoodsHandler::~GoodsHandler()
 		delete this->goodsList[i];
 	}
 
-	delete[] this->goodsList;
+    delete[] this->goodsList;
+}
+
+std::string *GoodsHandler::getAllGoodsNames() const
+{
+    std::string* array = nullptr;
+
+    if (this->nrOfGoods > 0)
+    {
+        array = new std::string[this->nrOfGoods];
+
+        for (int i = 0; i < this->nrOfGoods; ++i)
+        {
+            array[i] = this->goodsList[i]->getName();
+        }
+    }
+
+    return array;
 }
 
 void GoodsHandler::addGoods(Goods* goods) throw(...)

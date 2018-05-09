@@ -16,6 +16,8 @@ public:
 	WarehouseHandler(const WarehouseHandler& other) = delete;
 	bool operator=(const WarehouseHandler& other) const = delete;
 
+    std::string* getAllWarehouseNames() const;
+
 	void addWarehouse(Warehouse* warehouse) throw(...);
 	Warehouse* getWarehouse(std::string name);
 	Warehouse* removeWarehouse(std::string name);

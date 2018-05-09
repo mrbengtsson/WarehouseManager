@@ -16,6 +16,8 @@ public:
 	GoodsHandler(const GoodsHandler& other) = delete;
 	bool operator=(const GoodsHandler& other) const = delete;
 
+    std::string* getAllGoodsNames() const;
+
 	void addGoods(Goods* goods) throw(...);
 	Goods* getGoods(std::string name);
 	Goods* removeGoods(std::string name);

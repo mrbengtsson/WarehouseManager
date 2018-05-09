@@ -6,7 +6,6 @@ FailedAddDialog::FailedAddDialog(QWidget *parent) :
     ui(new Ui::FailedAddDialog)
 {
     ui->setupUi(this);
-    QApplication::beep();
 }
 
 FailedAddDialog::~FailedAddDialog()

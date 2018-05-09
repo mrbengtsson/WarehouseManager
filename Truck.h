@@ -22,6 +22,7 @@ public:
 	void setDestination(std::string destination);
 
 	//From goodsHandler
+    std::string* getAllGoodsNames() const;
 	void addGoods(Goods* goods) throw(...);
 	Goods* getGoods(std::string name);
 	Goods* removeGoods(std::string name);

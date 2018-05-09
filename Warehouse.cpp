@@ -20,7 +20,12 @@ std::string Warehouse::getName() const
 
 void Warehouse::setName(std::string name)
 {
-	this->name = name;
+    this->name = name;
+}
+
+std::string *Warehouse::getAllGoodsNames() const
+{
+    return this->goodsHandler->getAllGoodsNames();
 }
 
 void Warehouse::addGoods(Goods * goods) throw(...)
@@ -45,7 +50,12 @@ int Warehouse::getNrOfGoods() const
 
 bool Warehouse::isFullWithGoods() const
 {
-	return this->goodsHandler->isFull();
+    return this->goodsHandler->isFull();
+}
+
+std::string *Warehouse::getAllTruckNames() const
+{
+    return this->truckHandler->getAllTruckNames();
 }
 
 void Warehouse::addTruck(Truck * truck) throw(...)

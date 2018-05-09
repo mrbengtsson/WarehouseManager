@@ -16,6 +16,8 @@ public:
 	TruckHandler(const TruckHandler& other) = delete;
 	bool operator=(const TruckHandler& other) const = delete;
 
+    std::string* getAllTruckNames() const;
+
 	void addTruck(Truck* truck) throw(...);
 	Truck* getTruck(std::string name);
 	Truck* removeTruck(std::string name);

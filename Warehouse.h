@@ -21,6 +21,7 @@ public:
 	void setName(std::string name);
 
 	//From goodshandler
+    std::string* getAllGoodsNames() const;
 	void addGoods(Goods* goods) throw(...);
 	Goods* getGoods(std::string name);
 	Goods* removeGoods(std::string name);
@@ -28,6 +29,7 @@ public:
 	bool isFullWithGoods() const;
 
 	//From truckhandler
+    std::string* getAllTruckNames() const;
 	void addTruck(Truck* truck) throw(...);
 	Truck* getTruck(std::string name);
 	Truck* removeTruck(std::string name);

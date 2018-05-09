@@ -29,7 +29,12 @@ void Truck::setName(std::string name)
 
 void Truck::setDestination(std::string destination)
 {
-	this->destination = destination;
+    this->destination = destination;
+}
+
+std::string *Truck::getAllGoodsNames() const
+{
+    return this->goodsHandler->getAllGoodsNames();
 }
 
 void Truck::addGoods(Goods * goods) throw(...)

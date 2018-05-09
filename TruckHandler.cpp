@@ -19,7 +19,24 @@ TruckHandler::~TruckHandler()
 		delete this->truckList[i];
 	}
 
-	delete[] this->truckList;
+    delete[] this->truckList;
+}
+
+std::string *TruckHandler::getAllTruckNames() const
+{
+    std::string* array = nullptr;
+
+    if (this->nrOfTrucks > 0)
+    {
+        array = new std::string[this->nrOfTrucks];
+
+        for (int i = 0; i < this->nrOfTrucks; ++i)
+        {
+            array[i] = this->truckList[i]->getName();
+        }
+    }
+
+    return array;
 }
 
 void TruckHandler::addTruck(Truck* truck) throw(...)

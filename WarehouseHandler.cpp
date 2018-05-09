@@ -19,7 +19,24 @@ WarehouseHandler::~WarehouseHandler()
 		delete this->warehouseList[i];
 	}
 
-	delete[] this->warehouseList;
+    delete[] this->warehouseList;
+}
+
+std::string * WarehouseHandler::getAllWarehouseNames() const
+{
+    std::string* array = nullptr;
+
+    if (this->nrOfWarehouses > 0)
+    {
+        array = new std::string[this->nrOfWarehouses];
+
+        for (int i = 0; i < this->nrOfWarehouses; ++i)
+        {
+            array[i] = this->warehouseList[i]->getName();
+        }
+    }
+
+    return array;
 }
 
 void WarehouseHandler::addWarehouse(Warehouse* warehouse) throw(...)
