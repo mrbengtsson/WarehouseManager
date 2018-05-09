@@ -1,20 +1,18 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
-#include "DatabaseHandler.h"
 #include "WarehouseHandler.h"
 
 class System
 {
 private:
-	DatabaseHandler* databaseHandler;
 	WarehouseHandler* warehouseHandler;
 
 	Warehouse* selectedWarehouse;
 	Truck* selectedTruck;
 	Goods* selectedGoods;
 public:
-	System(int databaseCapacity = 1, int warehouseCapacity = 10);
+    System(int warehouseCapacity = 10);
 	virtual ~System();
 
 	void selectWarehouse(std::string name);

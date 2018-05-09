@@ -26,8 +26,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    Database.cpp \
-    DatabaseHandler.cpp \
     Goods.cpp \
     GoodsHandler.cpp \
     Truck.cpp \
@@ -39,8 +37,6 @@ SOURCES += \
 
 HEADERS += \
         mainwindow.h \
-    Database.h \
-    DatabaseHandler.h \
     Goods.h \
     GoodsHandler.h \
     Truck.h \

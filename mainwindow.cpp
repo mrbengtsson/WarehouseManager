@@ -3,7 +3,7 @@
 #include "failedadddialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent), ui(new Ui::MainWindow), dialog(new FailedAddDialog(this)), system(new System(1, 2))
+    QMainWindow(parent), ui(new Ui::MainWindow), dialog(new FailedAddDialog(this)), system(new System())
 {
     ui->setupUi(this);
 

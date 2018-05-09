@@ -1,8 +1,7 @@
 #include "System.h"
 
-System::System(int databaseCapacity, int warehouseCapacity)
+System::System(int warehouseCapacity)
 {
-	this->databaseHandler = new DatabaseHandler(databaseCapacity);
 	this->warehouseHandler = new WarehouseHandler(warehouseCapacity);
 	this->selectedWarehouse = nullptr;
 	this->selectedTruck = nullptr;
@@ -11,7 +10,6 @@ System::System(int databaseCapacity, int warehouseCapacity)
 
 System::~System()
 {
-	delete this->databaseHandler;
 	delete this->warehouseHandler;
 }
 
@@ -67,11 +65,6 @@ void System::selectGoods(std::string name, bool isWarehouse)
     {
         this->selectedGoods = this->selectedTruck->getGoods(name);
 	}
-}
-
-bool System::isDatabaseHandlerFull() const
-{
-	return this->databaseHandler->isFull();
 }
 
 bool System::isWarehouseHandlerFull() const
