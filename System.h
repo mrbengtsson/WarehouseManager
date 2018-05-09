@@ -10,7 +10,6 @@ private:
 	DatabaseHandler* databaseHandler;
 	WarehouseHandler* warehouseHandler;
 
-	bool currentSelectionIsATruck;
 	Warehouse* selectedWarehouse;
 	Truck* selectedTruck;
 	Goods* selectedGoods;
@@ -24,7 +23,7 @@ public:
 	bool warehouseExists(std::string name) const;
 
 	void selectTruck(std::string name);
-	void selectGoods(std::string name);
+    void selectGoods(std::string name, bool isWarehouse);
 
 	Warehouse* getSelectedWarehouse() const;
 	Truck* getSelectedTruck() const;

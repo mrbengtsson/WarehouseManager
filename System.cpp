@@ -6,8 +6,7 @@ System::System(int databaseCapacity, int warehouseCapacity)
 	this->warehouseHandler = new WarehouseHandler(warehouseCapacity);
 	this->selectedWarehouse = nullptr;
 	this->selectedTruck = nullptr;
-	this->selectedGoods = nullptr;
-	this->currentSelectionIsATruck = false;
+    this->selectedGoods = nullptr;
 }
 
 System::~System()
@@ -58,15 +57,15 @@ void System::selectTruck(std::string name)
 	this->selectedTruck = this->selectedWarehouse->getTruck(name);
 }
 
-void System::selectGoods(std::string name)
+void System::selectGoods(std::string name, bool isWarehouse)
 {
-	if (this->currentSelectionIsATruck)
+    if (isWarehouse)
 	{
-		this->selectedGoods = this->selectedTruck->getGoods(name);
+        this->selectedGoods = this->selectedWarehouse->getGoods(name);
 	}
 	else
-	{
-		this->selectedGoods = this->selectedWarehouse->getGoods(name);
+    {
+        this->selectedGoods = this->selectedTruck->getGoods(name);
 	}
 }
 
